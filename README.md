@@ -1,3 +1,4 @@
-## To start local web server:
+## To start flask:
 
-`http-server`
+cd py
+./start_flask.sh

@@ -58,7 +58,11 @@ db = {'astronomy': '''Pulsars,
     </table>
 """}
 
-import pickle
+def export_data(data):
+  import pickle
 
-with open('data/db.pkl', 'wb') as f:
-    pickle.dump(db,f)
+  with open('data/db.pkl', 'wb') as f:
+      pickle.dump(data,f)
+
+if __name__=='__main__':
+  export_data(db)

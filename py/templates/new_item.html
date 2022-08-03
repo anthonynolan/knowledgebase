@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Astronomy</title>
+    <title>New item</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css"
@@ -13,9 +13,10 @@
     />
   </head>
   <body>
-    {% for item in items%}
-    <div><a href="pages/{{item}}">{{item}}</a></div>
-    {% endfor %}
-    <a href="/new_item">new item</a>
+    <form action="/put_new_item" method="post">
+      <input type="text" name="name" />
+      <input type="text" name="content" />
+      <input type="submit" />
+    </form>
   </body>
 </html>

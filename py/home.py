@@ -33,7 +33,9 @@ def put_new_item():
 
 @app.route('/items')
 def get_items():
-    return db
+    for_return = [{'name': a, 'content': b} for a, b in db.items()]
+
+    return for_return
 
 import pickle
 

@@ -5,18 +5,23 @@ import { useEffect, useState } from "react";
 
 axios.defaults.baseURL = "http://localhost:5000";
 
-const getNotes = () => axios.get("/items").then((res) => res.data);
+const getItems = () => axios.get("/items").then((res) => res.data);
 
 function App() {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    getNotes()
-      .then((e) => {
-        setItems(Object.keys(e));
-      })
+    getItems()
+      .then((e) => setItems(e))
       .catch((exception) => console.log("exception:" + exception));
   }, []);
-  return <div>{items}</div>;
+
+  return (
+    <ul>
+      {items.map((item) => (
+        <li key={item.name}>{item.name}</li>
+      ))}
+    </ul>
+  );
 }
 
 export default App;

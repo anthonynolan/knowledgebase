@@ -41,3 +41,5 @@ import pickle
 
 with open('data/db.pkl', 'rb') as f:
     db = pickle.load(f)
+    import pdb
+    # pdb.set_trace()

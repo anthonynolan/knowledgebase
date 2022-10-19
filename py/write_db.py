@@ -63,6 +63,9 @@ def export_data(data):
 
   with open('data/db.pkl', 'wb') as f:
       pickle.dump(data,f)
+  with open('data/db.json', 'wt') as f:
+    import json
+    json.dump(data, f)
 
 if __name__=='__main__':
   export_data(db)

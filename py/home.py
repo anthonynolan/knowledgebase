@@ -8,9 +8,9 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/")
-def hello_world():
-    return render_template("index.html", items=db.keys())
+# @app.route("/")
+# def hello_world():
+#     return render_template("index.html", items=db.keys())
 
 @app.route("/pages/<name>")
 def get_page(name=None):
@@ -37,9 +37,14 @@ def get_items():
 
     return for_return
 
-import pickle
 
-with open('data/db.pkl', 'rb') as f:
-    db = pickle.load(f)
-    import pdb
-    # pdb.set_trace()
+import json
+with open('data/db.json', 'rt') as f:
+    db = json.load(f)
+
+# import pickle
+
+# with open('data/db.pkl', 'rb') as f:
+#     db = pickle.load(f)
+#     import pdb
+#     # pdb.set_trace()
